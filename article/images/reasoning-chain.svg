@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 900" width="500" height="900">
+  <defs>
+    <style>
+      .title { font-family: "Heiti SC", "SimHei", "PingFang SC", sans-serif; font-size: 19px; fill: #1a202c; font-weight: bold; }
+      .box-text { font-family: "PingFang SC", "Heiti SC", sans-serif; font-size: 13px; fill: #2d3748; }
+      .step-num { font-family: "PingFang SC", "Heiti SC", sans-serif; font-size: 10px; fill: #a0aec0; font-weight: bold; }
+      .phase-label { font-family: "PingFang SC", "Heiti SC", sans-serif; font-size: 10px; letter-spacing: 3px; font-weight: bold; }
+    </style>
+    <!-- Arrow markers per color -->
+    <marker id="arrBlue" viewBox="0 0 10 7" refX="5" refY="3.5" markerWidth="9" markerHeight="6" orient="auto">
+      <polygon points="0 0.5, 8 3.5, 0 6.5" fill="#3182ce"/>
+    </marker>
+    <marker id="arrGreen" viewBox="0 0 10 7" refX="5" refY="3.5" markerWidth="9" markerHeight="6" orient="auto">
+      <polygon points="0 0.5, 8 3.5, 0 6.5" fill="#38a169"/>
+    </marker>
+    <marker id="arrYellow" viewBox="0 0 10 7" refX="5" refY="3.5" markerWidth="9" markerHeight="6" orient="auto">
+      <polygon points="0 0.5, 8 3.5, 0 6.5" fill="#d69e2e"/>
+    </marker>
+    <marker id="arrPurple" viewBox="0 0 10 7" refX="5" refY="3.5" markerWidth="9" markerHeight="6" orient="auto">
+      <polygon points="0 0.5, 8 3.5, 0 6.5" fill="#805ad5"/>
+    </marker>
+    <!-- Shadow filter -->
+    <filter id="boxShadow" x="-3%" y="-6%" width="106%" height="120%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.07"/>
+    </filter>
+    <!-- Background -->
+    <linearGradient id="bgG" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#f7fafc"/>
+      <stop offset="100%" stop-color="#edf2f7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="900" fill="url(#bgG)" rx="6"/>
+  <rect width="500" height="900" fill="none" stroke="#e2e8f0" stroke-width="1" rx="6"/>
+
+  <!-- Title -->
+  <text x="250" y="36" text-anchor="middle" class="title">从第一性原理到全球统一账本</text>
+
+  <!-- Phase indicators (left side vertical bars) -->
+  <!-- Foundation: steps 1-3 -->
+  <rect x="30" y="56" width="4" height="190" rx="2" fill="#3182ce" opacity="0.25"/>
+  <text x="26" y="155" text-anchor="end" class="phase-label" fill="#3182ce" transform="rotate(-90, 26, 155)">基础</text>
+  <!-- PoW derivation: steps 4-6 -->
+  <rect x="30" y="268" width="4" height="218" rx="2" fill="#38a169" opacity="0.25"/>
+  <text x="26" y="380" text-anchor="end" class="phase-label" fill="#38a169" transform="rotate(-90, 26, 380)">推导</text>
+  <!-- Infrastructure: steps 7-8 -->
+  <rect x="30" y="508" width="4" height="148" rx="2" fill="#d69e2e" opacity="0.25"/>
+  <text x="26" y="585" text-anchor="end" class="phase-label" fill="#d69e2e" transform="rotate(-90, 26, 585)">形态</text>
+  <!-- Conclusion: steps 9-10 -->
+  <rect x="30" y="678" width="4" height="175" rx="2" fill="#805ad5" opacity="0.25"/>
+  <text x="26" y="768" text-anchor="end" class="phase-label" fill="#805ad5" transform="rotate(-90, 26, 768)">推论</text>
+
+  <!-- ===== STEP 1 ===== -->
+  <g filter="url(#boxShadow)">
+    <rect x="55" y="56" width="390" height="48" rx="8" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+  </g>
+  <text x="70" y="74" class="step-num">01</text>
+  <text x="250" y="85" text-anchor="middle" class="box-text">物质不可复制 &#x2194; 信息可复制</text>
+  <!-- Arrow 1->2 -->
+  <line x1="250" y1="104" x2="250" y2="122" stroke="#3182ce" stroke-width="1.5" marker-end="url(#arrBlue)"/>
+
+  <!-- ===== STEP 2 ===== -->
+  <g filter="url(#boxShadow)">
+    <rect x="75" y="126" width="350" height="48" rx="8" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+  </g>
+  <text x="90" y="144" class="step-num">02</text>
+  <text x="250" y="155" text-anchor="middle" class="box-text">数字世界缺乏物理性</text>
+  <!-- Arrow 2->3 -->
+  <line x1="250" y1="174" x2="250" y2="192" stroke="#3182ce" stroke-width="1.5" marker-end="url(#arrBlue)"/>
+
+  <!-- ===== STEP 3 ===== -->
+  <g filter="url(#boxShadow)">
+    <rect x="95" y="196" width="310" height="48" rx="8" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+  </g>
+  <text x="110" y="214" class="step-num">03</text>
+  <text x="250" y="225" text-anchor="middle" class="box-text">双花问题</text>
+  <!-- Arrow 3->4 -->
+  <line x1="250" y1="244" x2="250" y2="264" stroke="#3182ce" stroke-width="1.5" marker-end="url(#arrBlue)"/>
+
+  <!-- ===== STEP 4 ===== -->
+  <g filter="url(#boxShadow)">
+    <rect x="85" y="268" width="330" height="48" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+  </g>
+  <text x="100" y="286" class="step-num">04</text>
+  <text x="250" y="297" text-anchor="middle" class="box-text">排序是唯一解法</text>
+  <!-- Arrow 4->5 -->
+  <line x1="250" y1="316" x2="250" y2="334" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrGreen)"/>
+
+  <!-- ===== STEP 5 ===== -->
+  <g filter="url(#boxShadow)">
+    <rect x="55" y="338" width="390" height="48" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+  </g>
+  <text x="70" y="356" class="step-num">05</text>
+  <text x="250" y="367" text-anchor="middle" class="box-text">代价必须外部、物理、不可逆</text>
+  <!-- Arrow 5->6 -->
+  <line x1="250" y1="386" x2="250" y2="404" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrGreen)"/>
+
+  <!-- ===== STEP 6 ===== -->
+  <g filter="url(#boxShadow)">
+    <rect x="60" y="408" width="380" height="56" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+  </g>
+  <text x="75" y="430" class="step-num">06</text>
+  <text x="250" y="437" text-anchor="middle" font-family="PingFang SC, Heiti SC, sans-serif" font-size="14" fill="#22543d" font-weight="bold">PoW：能量竞争实现诚实排序</text>
+  <text x="250" y="455" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="11" fill="#718096">-- 物理能量锚定数字秩序 --</text>
+  <!-- Arrow 6->7 -->
+  <line x1="250" y1="464" x2="250" y2="484" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrGreen)"/>
+
+  <!-- ===== STEP 7 ===== -->
+  <g filter="url(#boxShadow)">
+    <rect x="55" y="508" width="390" height="48" rx="8" fill="#fffff0" stroke="#d69e2e" stroke-width="1.5"/>
+  </g>
+  <text x="70" y="526" class="step-num">07</text>
+  <text x="250" y="537" text-anchor="middle" class="box-text">不可篡改的公共账本（数字白纸）</text>
+  <!-- Arrow 7->8 -->
+  <line x1="250" y1="556" x2="250" y2="574" stroke="#d69e2e" stroke-width="1.5" marker-end="url(#arrYellow)"/>
+
+  <!-- ===== STEP 8 ===== -->
+  <g filter="url(#boxShadow)">
+    <rect x="85" y="578" width="330" height="48" rx="8" fill="#fffff0" stroke="#d69e2e" stroke-width="1.5"/>
+  </g>
+  <text x="100" y="596" class="step-num">08</text>
+  <text x="250" y="607" text-anchor="middle" class="box-text">全球公共基础设施</text>
+  <!-- Arrow 8->9 -->
+  <line x1="250" y1="626" x2="250" y2="654" stroke="#d69e2e" stroke-width="1.5" marker-end="url(#arrYellow)"/>
+
+  <!-- ===== STEP 9 ===== -->
+  <g filter="url(#boxShadow)">
+    <rect x="50" y="678" width="400" height="56" rx="8" fill="#faf5ff" stroke="#805ad5" stroke-width="1.5"/>
+  </g>
+  <text x="65" y="700" class="step-num">09</text>
+  <text x="250" y="705" text-anchor="middle" font-family="PingFang SC, Heiti SC, sans-serif" font-size="13" fill="#553c9a" font-weight="bold">跨链/L2 违背第一性原理 &#x2192; 一条链</text>
+  <text x="250" y="724" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="11" fill="#9f7aea">分裂排序权 = 重新引入双花风险</text>
+  <!-- Arrow 9->10 -->
+  <line x1="250" y1="734" x2="250" y2="756" stroke="#805ad5" stroke-width="1.5" marker-end="url(#arrPurple)"/>
+
+  <!-- ===== STEP 10 ===== -->
+  <g filter="url(#boxShadow)">
+    <rect x="60" y="780" width="380" height="56" rx="8" fill="#faf5ff" stroke="#805ad5" stroke-width="2"/>
+  </g>
+  <text x="75" y="802" class="step-num">10</text>
+  <text x="250" y="808" text-anchor="middle" font-family="PingFang SC, Heiti SC, sans-serif" font-size="14" fill="#44337a" font-weight="bold">链上扩容 &#x2192; 全球统一账本</text>
+  <text x="250" y="827" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="11" fill="#9f7aea">One Global Ledger for All</text>
+
+  <!-- Bottom note -->
+  <text x="250" y="870" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="11" fill="#a0aec0">每一步推导都基于前一步的逻辑必然</text>
+</svg>

@@ -1,0 +1,132 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{caption}
+\renewcommand{\figurename}{图}
+\usepackage{calc}
+
+% Pandoc 3.9 uses \real{} for proportional column widths
+\providecommand{\real}[1]{\dimexpr#1\relax}
+
+% Fix for Pandoc 3.9+ longtable without caption
+\newcounter{none}
+
+% Page geometry
+\geometry{top=3cm, bottom=3cm, left=2.5cm, right=2.5cm}
+
+% Chinese fonts
+\setCJKmainfont{Songti SC}[BoldFont=Heiti SC]
+\setCJKsansfont{Heiti SC}
+\setCJKmonofont{STFangsong}
+\setmainfont{Times New Roman}
+
+% Heading styles
+\titleformat{\section}{\Large\bfseries\sffamily}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\sffamily}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\sffamily}{\thesubsubsection}{1em}{}
+\setcounter{secnumdepth}{0}
+
+% Hyperlink style
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue!60!black,
+  citecolor=black
+}
+
+% Line spacing
+\linespread{1.6}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{2em}
+
+% Center title, author, email
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begin{center}
+    {\LARGE\bfseries\sffamily \@title \par}
+    \vskip 1em
+    {\large \@author \par}
+    \vskip 0.5em
+    {\normalsize \@date \par}
+  \end{center}
+  \vskip 2em
+}
+\makeatother
+
+% Header/Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small\color{gray} 区块链的第一性原理}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Make tables fit within page margins
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{3pt}
+
+% Force longtable to respect text width
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\setlength{\LTpre}{0.5em}
+\setlength{\LTpost}{0.5em}
+
+% Tables will be handled by column width adjustments in markdown
+
+% Pandoc tightlist support
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Pandoc 3.9 image bounding
+\usepackage{graphicx}
+\providecommand{\pandocbounded}[1]{#1}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=0.85\textheight,keepaspectratio}
+
+% Center all images
+\makeatletter
+\def\fps@figure{htbp}
+\g@addto@macro\@floatboxreset\centering
+\makeatother
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{\begin{center}\oldincludegraphics[#1]{#2}\end{center}}
+
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+\begin{document}
+
+$if(title)$
+\begin{center}
+{\LARGE\bfseries\sffamily $title$ \par}
+\vskip 0.5em
+$if(author)$
+{\normalsize $for(author)$$author$$sep$ \and $endfor$ \par}
+$endif$
+$if(date)$
+\vskip 0.2em
+{\small $date$ \par}
+$endif$
+\end{center}
+\vskip 1.5em
+$endif$
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+$body$
+
+\end{document}

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+  <defs>
+    <style>
+      .title { font-family: "Heiti SC", "SimHei", "PingFang SC", sans-serif; font-size: 20px; fill: #1a202c; font-weight: bold; }
+      .panel-title { font-family: "Heiti SC", "SimHei", "PingFang SC", sans-serif; font-size: 17px; fill: #2d3748; font-weight: bold; }
+      .label { font-family: "PingFang SC", "Heiti SC", sans-serif; font-size: 12px; fill: #4a5568; }
+      .label-white { font-family: "PingFang SC", "Heiti SC", sans-serif; font-size: 11px; fill: #ffffff; font-weight: bold; }
+      .label-coin { font-family: "PingFang SC", "Heiti SC", sans-serif; font-size: 13px; fill: #ffffff; font-weight: bold; }
+      .verdict-good { font-family: "Heiti SC", "SimHei", "PingFang SC", sans-serif; font-size: 16px; fill: #276749; font-weight: bold; }
+      .verdict-bad { font-family: "Heiti SC", "SimHei", "PingFang SC", sans-serif; font-size: 16px; fill: #9b2c2c; font-weight: bold; }
+      .note { font-family: "PingFang SC", "Heiti SC", sans-serif; font-size: 11px; fill: #718096; }
+    </style>
+    <!-- Green arrow -->
+    <marker id="arrowG" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="6" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#38a169"/>
+    </marker>
+    <!-- Red arrow -->
+    <marker id="arrowR" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="6" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c53030"/>
+    </marker>
+    <!-- Gray arrow -->
+    <marker id="arrowGy" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="6" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a0aec0"/>
+    </marker>
+    <!-- Coin gradient -->
+    <radialGradient id="coinGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#48bb78"/>
+      <stop offset="100%" stop-color="#276749"/>
+    </radialGradient>
+    <!-- Verify box gradient -->
+    <linearGradient id="verifyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2f855a"/>
+      <stop offset="100%" stop-color="#22543d"/>
+    </linearGradient>
+    <!-- Account box gradient -->
+    <linearGradient id="acctGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e53e3e"/>
+      <stop offset="100%" stop-color="#9b2c2c"/>
+    </linearGradient>
+    <!-- TX gradient -->
+    <linearGradient id="txGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fc8181"/>
+      <stop offset="100%" stop-color="#e53e3e"/>
+    </linearGradient>
+    <!-- Waiting TX gradient -->
+    <linearGradient id="txWaitGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#feb2b2"/>
+      <stop offset="100%" stop-color="#fc8181"/>
+    </linearGradient>
+    <!-- Shadow -->
+    <filter id="softShadow" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7fafc"/>
+      <stop offset="100%" stop-color="#edf2f7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="500" fill="url(#bgGrad)" rx="6"/>
+  <rect width="900" height="500" fill="none" stroke="#e2e8f0" stroke-width="1" rx="6"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" class="title">数据模型决定扩容上限</text>
+
+  <!-- ========== LEFT PANEL: UTXO ========== -->
+  <rect x="20" y="55" width="420" height="430" rx="10" fill="#f0fff4" stroke="#c6f6d5" stroke-width="1" filter="url(#softShadow)"/>
+  <text x="230" y="85" text-anchor="middle" class="panel-title">UTXO 模型</text>
+
+  <!-- 5 parallel lanes -->
+  <!-- Lane 1 -->
+  <g transform="translate(50, 105)">
+    <rect x="0" y="0" width="360" height="48" rx="6" fill="#ffffff" stroke="#c6f6d5" stroke-width="1" opacity="0.8"/>
+    <circle cx="40" cy="24" r="18" fill="url(#coinGrad)"/>
+    <text x="40" y="29" text-anchor="middle" class="label-coin">0.5</text>
+    <line x1="64" y1="24" x2="155" y2="24" stroke="#38a169" stroke-width="1.8" marker-end="url(#arrowG)"/>
+    <rect x="162" y="8" width="60" height="32" rx="5" fill="url(#verifyGrad)"/>
+    <text x="192" y="29" text-anchor="middle" class="label-white">验证</text>
+    <line x1="228" y1="24" x2="295" y2="24" stroke="#38a169" stroke-width="1.8" marker-end="url(#arrowG)"/>
+    <text x="318" y="29" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="18" fill="#38a169">&#x2713;</text>
+  </g>
+
+  <!-- Lane 2 -->
+  <g transform="translate(50, 163)">
+    <rect x="0" y="0" width="360" height="48" rx="6" fill="#ffffff" stroke="#c6f6d5" stroke-width="1" opacity="0.8"/>
+    <circle cx="40" cy="24" r="18" fill="url(#coinGrad)"/>
+    <text x="40" y="29" text-anchor="middle" class="label-coin">1.2</text>
+    <line x1="64" y1="24" x2="155" y2="24" stroke="#38a169" stroke-width="1.8" marker-end="url(#arrowG)"/>
+    <rect x="162" y="8" width="60" height="32" rx="5" fill="url(#verifyGrad)"/>
+    <text x="192" y="29" text-anchor="middle" class="label-white">验证</text>
+    <line x1="228" y1="24" x2="295" y2="24" stroke="#38a169" stroke-width="1.8" marker-end="url(#arrowG)"/>
+    <text x="318" y="29" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="18" fill="#38a169">&#x2713;</text>
+  </g>
+
+  <!-- Lane 3 -->
+  <g transform="translate(50, 221)">
+    <rect x="0" y="0" width="360" height="48" rx="6" fill="#ffffff" stroke="#c6f6d5" stroke-width="1" opacity="0.8"/>
+    <circle cx="40" cy="24" r="18" fill="url(#coinGrad)"/>
+    <text x="40" y="29" text-anchor="middle" class="label-coin">0.3</text>
+    <line x1="64" y1="24" x2="155" y2="24" stroke="#38a169" stroke-width="1.8" marker-end="url(#arrowG)"/>
+    <rect x="162" y="8" width="60" height="32" rx="5" fill="url(#verifyGrad)"/>
+    <text x="192" y="29" text-anchor="middle" class="label-white">验证</text>
+    <line x1="228" y1="24" x2="295" y2="24" stroke="#38a169" stroke-width="1.8" marker-end="url(#arrowG)"/>
+    <text x="318" y="29" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="18" fill="#38a169">&#x2713;</text>
+  </g>
+
+  <!-- Lane 4 -->
+  <g transform="translate(50, 279)">
+    <rect x="0" y="0" width="360" height="48" rx="6" fill="#ffffff" stroke="#c6f6d5" stroke-width="1" opacity="0.8"/>
+    <circle cx="40" cy="24" r="18" fill="url(#coinGrad)"/>
+    <text x="40" y="29" text-anchor="middle" class="label-coin">2.0</text>
+    <line x1="64" y1="24" x2="155" y2="24" stroke="#38a169" stroke-width="1.8" marker-end="url(#arrowG)"/>
+    <rect x="162" y="8" width="60" height="32" rx="5" fill="url(#verifyGrad)"/>
+    <text x="192" y="29" text-anchor="middle" class="label-white">验证</text>
+    <line x1="228" y1="24" x2="295" y2="24" stroke="#38a169" stroke-width="1.8" marker-end="url(#arrowG)"/>
+    <text x="318" y="29" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="18" fill="#38a169">&#x2713;</text>
+  </g>
+
+  <!-- Lane 5 -->
+  <g transform="translate(50, 337)">
+    <rect x="0" y="0" width="360" height="48" rx="6" fill="#ffffff" stroke="#c6f6d5" stroke-width="1" opacity="0.8"/>
+    <circle cx="40" cy="24" r="18" fill="url(#coinGrad)"/>
+    <text x="40" y="29" text-anchor="middle" class="label-coin">0.8</text>
+    <line x1="64" y1="24" x2="155" y2="24" stroke="#38a169" stroke-width="1.8" marker-end="url(#arrowG)"/>
+    <rect x="162" y="8" width="60" height="32" rx="5" fill="url(#verifyGrad)"/>
+    <text x="192" y="29" text-anchor="middle" class="label-white">验证</text>
+    <line x1="228" y1="24" x2="295" y2="24" stroke="#38a169" stroke-width="1.8" marker-end="url(#arrowG)"/>
+    <text x="318" y="29" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="18" fill="#38a169">&#x2713;</text>
+  </g>
+
+  <!-- Parallel bracket indicator -->
+  <text x="422" y="225" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="12" fill="#38a169" transform="rotate(90, 422, 250)" opacity="0.6">同 时 处 理</text>
+
+  <!-- Bottom verdict -->
+  <text x="230" y="420" text-anchor="middle" class="label">每个 UTXO 独立验证，互不依赖</text>
+  <rect x="120" y="435" width="220" height="32" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+  <text x="230" y="457" text-anchor="middle" class="verdict-good">&#x2713; 天然并行</text>
+
+  <!-- ========== DIVIDER ========== -->
+  <line x1="450" y1="60" x2="450" y2="480" stroke="#cbd5e0" stroke-width="1" stroke-dasharray="6,4"/>
+  <rect x="436" y="42" width="28" height="22" rx="4" fill="#edf2f7" stroke="#cbd5e0" stroke-width="1"/>
+  <text x="450" y="57" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="11" fill="#a0aec0" font-weight="bold">VS</text>
+
+  <!-- ========== RIGHT PANEL: ACCOUNT MODEL ========== -->
+  <rect x="460" y="55" width="420" height="430" rx="10" fill="#fff5f5" stroke="#fed7d7" stroke-width="1" filter="url(#softShadow)"/>
+  <text x="670" y="85" text-anchor="middle" class="panel-title">账户模型</text>
+
+  <!-- Account balance box -->
+  <rect x="640" y="115" width="130" height="55" rx="8" fill="url(#acctGrad)" filter="url(#softShadow)"/>
+  <text x="705" y="140" text-anchor="middle" font-family="PingFang SC, Heiti SC, sans-serif" font-size="13" fill="#ffffff" font-weight="bold">账户余额</text>
+  <text x="705" y="158" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="12" fill="#fed7d7">100.0 ETH</text>
+
+  <!-- Bottleneck funnel visual -->
+  <!-- Lock icon -->
+  <rect x="610" y="127" width="22" height="16" rx="3" fill="#742a2a"/>
+  <rect x="616" y="119" width="10" height="10" rx="5" fill="none" stroke="#742a2a" stroke-width="2"/>
+  <text x="621" y="140" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="7" fill="#ffffff">锁</text>
+
+  <!-- Active TX (being processed) -->
+  <rect x="530" y="128" width="68" height="34" rx="5" fill="url(#txGrad)" filter="url(#softShadow)"/>
+  <text x="564" y="150" text-anchor="middle" class="label-white">TX-1</text>
+  <line x1="602" y1="145" x2="634" y2="145" stroke="#c53030" stroke-width="2" marker-end="url(#arrowR)"/>
+
+  <!-- Queue: TX-2 waiting behind TX-1 -->
+  <rect x="530" y="180" width="68" height="34" rx="5" fill="url(#txWaitGrad)" opacity="0.8"/>
+  <text x="564" y="202" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="11" fill="#ffffff">TX-2</text>
+  <line x1="564" y1="176" x2="564" y2="168" stroke="#a0aec0" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrowGy)"/>
+
+  <!-- TX-3 -->
+  <rect x="530" y="226" width="68" height="34" rx="5" fill="url(#txWaitGrad)" opacity="0.6"/>
+  <text x="564" y="248" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="11" fill="#ffffff" opacity="0.8">TX-3</text>
+  <line x1="564" y1="222" x2="564" y2="218" stroke="#a0aec0" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrowGy)"/>
+
+  <!-- TX-4 -->
+  <rect x="530" y="272" width="68" height="34" rx="5" fill="url(#txWaitGrad)" opacity="0.45"/>
+  <text x="564" y="294" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="11" fill="#ffffff" opacity="0.7">TX-4</text>
+  <line x1="564" y1="268" x2="564" y2="264" stroke="#a0aec0" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrowGy)"/>
+
+  <!-- TX-5 -->
+  <rect x="530" y="318" width="68" height="34" rx="5" fill="url(#txWaitGrad)" opacity="0.3"/>
+  <text x="564" y="340" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="11" fill="#ffffff" opacity="0.6">TX-5</text>
+  <line x1="564" y1="314" x2="564" y2="310" stroke="#a0aec0" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrowGy)"/>
+
+  <!-- Queue label -->
+  <text x="564" y="116" text-anchor="middle" font-family="PingFang SC, Heiti SC, sans-serif" font-size="11" fill="#c53030">等待队列</text>
+  <line x1="564" y1="120" x2="564" y2="125" stroke="#c53030" stroke-width="1" marker-end="url(#arrowR)"/>
+
+  <!-- Nonce note -->
+  <text x="705" y="190" text-anchor="middle" class="note">nonce 必须严格递增</text>
+  <text x="705" y="206" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="11" fill="#a0aec0">n &#x2192; n+1 &#x2192; n+2 &#x2192; ...</text>
+
+  <!-- Bottom verdict -->
+  <text x="670" y="420" text-anchor="middle" class="label">同一账户的交易必须串行执行</text>
+  <rect x="560" y="435" width="220" height="32" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+  <text x="670" y="457" text-anchor="middle" class="verdict-bad">&#x2717; 天然串行</text>
+</svg>
